@@ -35,18 +35,18 @@ public static boolean writePlayersToJSON(String fn, ArrayList<Player> players)
 		for (Player player : players)
 		{
 			//object = new JSONObject();
-			object.put("Name: ", players.getName());
-			object.put("Team: ", players.getTeam());
-			object.put("Wins: ", players.getW());
-			object.put("Losses: " , players.getL());
-			object.put("Minutes Per Game: " , players.getMP());
-			object.put("Points Per Game: " , players.getPTS());
-			object.put("Feild Goal Attempts Per Game: " , players.getFG());
-			object.put("Rebounds Per Game: " , players.getRB());
-			object.put("Assists Per Game : ",players.getAST());
-			object.put("Steals Per Game: " , players.getSTL());
-			object.put("Blocks Per Game: " , players.getBLK());
-			object.put("Turnovers Per Game: " , players.getTOV());
+			object.put("Name: ", player.getName());
+			object.put("Team: ", player.getTeam());
+			object.put("Wins: ", player.getW());
+			object.put("Losses: " , player.getL());
+			object.put("Minutes Per Game: " , player.getMP());
+			object.put("Points Per Game: " , player.getPTS());
+			object.put("Feild Goal Attempts Per Game: " , player.getFG());
+			object.put("Rebounds Per Game: " , player.getRB());
+			object.put("Assists Per Game : ",player.getAST());
+			object.put("Steals Per Game: " , player.getSTL());
+			object.put("Blocks Per Game: " , player.getBLK());
+			object.put("Turnovers Per Game: " , player.getTOV());
 			array.add(object);
 		}
 
@@ -89,8 +89,10 @@ This method simply prints the Players data to the screen
 @param ArrayList<Player> p is an ArrayList filled with the players' data/stats
 	@return just prints the data to the screen.
 */
-public static writePlayersToScreen(ArrayList<Player> p)
+public static void writePlayersToScreen(ArrayList<Player> players)
 {
+	for (Player p :players)
+	{
 	System.out.println("Here are all the Players and their respective data: ")
 	System.out.println("Name: ", p.getName());
 	System.out.println("Team: ", p.getTeam());
@@ -104,6 +106,7 @@ public static writePlayersToScreen(ArrayList<Player> p)
 	System.out.println("Steals Per Game: " , p.getSTL());
 	System.out.println("Blocks Per Game: " , p.getBLK());
 	System.out.println("Turnovers Per Game: " , p.getTOV());
+}	
 }
 
 //empty main just for looks
