@@ -1,8 +1,22 @@
 import java.util.Scanner;
 import java.net.URL;
 import java.util.ArrayList;
- 
+
+/**
+ * This class contains one function that takes in the URL of a website and returns an ArrayList of players with their stats.
+ * @author Colin
+ *
+ */
+
 public class ScreenScraper {
+	
+	/**
+	 * This function takes in a URL of a website to be scraped and returns an ArrayList of players with their stats.
+	 * @author Colin
+	 * @param url The URL that is being scraped
+	 * @return players A list of players
+	 */
+	
 	public static ArrayList<Player> PlayerScraper(String url) {
 		ArrayList<Player> players = new ArrayList<Player>();
 		String line;
