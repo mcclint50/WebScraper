@@ -119,7 +119,7 @@ public class Player {
 	
 	/**
 	 * This is the default constructor class for the players.
-	 * @author
+	 * @author Colin
 	 */
 	
 	public Player() {
@@ -140,18 +140,18 @@ public class Player {
 	/**
 	 * This is the constructor class that has parameters to set the values for each player.
 	 * @author Colin
-	 * @param name
-	 * @param team
-	 * @param W
-	 * @param L
-	 * @param MP
-	 * @param PTS
-	 * @param FG
-	 * @param RB
-	 * @param AST
-	 * @param STL
-	 * @param BLK
-	 * @param TOV
+	 * @param name Name of player
+	 * @param team Team of player
+	 * @param W # of wins
+	 * @param L # of losses
+	 * @param MP Minutes played per game
+	 * @param PTS Points per game
+	 * @param FG Field goal percentage
+	 * @param RB Rebounds per game
+	 * @param AST Assists per game
+	 * @param STL Steals per game
+	 * @param BLK Blocks per game
+	 * @param TOV Turnovers per game
 	 */
 	
 	public Player(String name, String team, int W, int L, double MP, double PTS, double FG, double RB, double AST, double STL, double BLK, double TOV) {
@@ -176,6 +176,6 @@ public class Player {
 	
 	@Override
 	public String toString() {
-		return String.format("%s	%s	%d	%d	%.1f	%.1f	%.1f	%.1f	%.1f	%.1f	%.1f	%.1f", name, team, W, L, MP, PTS, FG, RB, AST, STL, BLK, TOV);
+		return String.format("%s	%s	%d	%d	%.1f	%.1f	%.3f	%.1f	%.1f	%.1f	%.1f	%.1f", name, team, W, L, MP, PTS, FG, RB, AST, STL, BLK, TOV);
 	}
 }
