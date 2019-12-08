@@ -35,18 +35,18 @@ public static boolean writePlayersToJSON(String fn, ArrayList<Player> players)
 		for (Player player : players)
 		{
 			//object = new JSONObject();
-			object.put("Name: ", d.getName());
-			object.put("Team: ", d.getTeam());
-			object.put("Wins: ", d.getW());
-			object.put("Losses: " , d.getL());
-			object.put("Minutes Per Game: " , d.getMP());
-			object.put("Points Per Game: " , d.getPTS());
-			object.put("Feild Goal Attempts Per Game: " , d.getFG());
-			object.put("Rebounds Per Game: " , d.getRB());
-			object.put("Assists Per Game : ",d.getAST());
-			object.put("Steals Per Game: " , d.getSTL());
-			object.put("Blocks Per Game: " , d.getBLK());
-			object.put("Turnovers Per Game: " , d.getTOV());
+			object.put("Name: ", players.getName());
+			object.put("Team: ", players.getTeam());
+			object.put("Wins: ", players.getW());
+			object.put("Losses: " , players.getL());
+			object.put("Minutes Per Game: " , players.getMP());
+			object.put("Points Per Game: " , players.getPTS());
+			object.put("Feild Goal Attempts Per Game: " , players.getFG());
+			object.put("Rebounds Per Game: " , players.getRB());
+			object.put("Assists Per Game : ",players.getAST());
+			object.put("Steals Per Game: " , players.getSTL());
+			object.put("Blocks Per Game: " , players.getBLK());
+			object.put("Turnovers Per Game: " , players.getTOV());
 			array.add(object);
 		}
 
@@ -92,18 +92,18 @@ This method simply prints the Players data to the screen
 public static writePlayersToScreen(ArrayList<Player> p)
 {
 	System.out.println("Here are all the Players and their respective data: ")
-	System.out.println("Name: ", Player.getName());
-	System.out.println("Team: ", Player.getTeam());
-	System.out.println("Wins: ", Player.getW());
-	System.out.println("Losses: " , Player.getL());
-	System.out.println("Minutes Per Game: " , Player.getMP());
-	System.out.println("Points Per Game: " , Player.getPTS());
-	System.out.println("Feild Goal Attempts Per Game: " , Player.getFG());
-	System.out.println("Rebounds Per Game: " , Player.getRB());
-	System.out.println("Assists Per Game : ",Player.getAST());
-	System.out.println("Steals Per Game: " , Player.getSTL());
-	System.out.println("Blocks Per Game: " , Player.getBLK());
-	System.out.println("Turnovers Per Game: " , Player.getTOV());
+	System.out.println("Name: ", p.getName());
+	System.out.println("Team: ", p.getTeam());
+	System.out.println("Wins: ", p.getW());
+	System.out.println("Losses: " , p.getL());
+	System.out.println("Minutes Per Game: " , p.getMP());
+	System.out.println("Points Per Game: " , p.getPTS());
+	System.out.println("Feild Goal Attempts Per Game: " , p.getFG());
+	System.out.println("Rebounds Per Game: " , p.getRB());
+	System.out.println("Assists Per Game : ",p.getAST());
+	System.out.println("Steals Per Game: " , p.getSTL());
+	System.out.println("Blocks Per Game: " , p.getBLK());
+	System.out.println("Turnovers Per Game: " , p.getTOV());
 }
 
 //empty main just for looks
