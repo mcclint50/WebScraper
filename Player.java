@@ -2,14 +2,15 @@
  * 
  * This is the object class for each player that is taken from the website.
  * 
- * @author Colin
+ * @author Colin McClintic
+ 	@author Robert C Oliver Jr
  *
  * 
  * 
  */
 
 public class Player {
-
+	//initialize private strings and doubles to be called in the construction method
 	private String name;
 
 	private String team;
@@ -36,10 +37,12 @@ public class Player {
 
 	/**
 	 * 
-	 * The following are all the get and set functions that can be used for this
+	 * The following are all the get and set functions that will be used for this
 	 * object
 	 * 
-	 * @author Colin
+	 * @author Robert C Oliver Jr.
+	  @param n/a
+	  @return nothing
 	 * 
 	 */
 
@@ -191,7 +194,7 @@ public class Player {
 	 * 
 	 * This is the default constructor class for the players.
 	 * 
-	 * @author
+	 * @author Robert C Oliver Jr
 	 * 
 	 */
 
@@ -230,29 +233,29 @@ public class Player {
 	 * 
 	 * @author Colin
 	 * 
-	 * @param name
+	 * @param name for the players name
 	 * 
-	 * @param team
+	 * @param team what team the player is currently on
 	 * 
-	 * @param W
+	 * @param W how many wins the player has with current team for current season 
 	 * 
-	 * @param L
+	 * @param L how many losses the player has with current team for current season
 	 * 
-	 * @param MP
+	 * @param MP how many minutes the player has for the current year and team
 	 * 
-	 * @param PTS
+	 * @param PTS how many points the player has for the current year and team
 	 * 
-	 * @param FG
+	 * @param FG how many feild goal attempts (shots) the player has for the current season and team
 	 * 
-	 * @param RB
+	 * @param RB how many rebounds the player has for the current season and team
 	 * 
-	 * @param AST
+	 * @param AST how many assists the player has for the current season and team
 	 * 
-	 * @param STL
+	 * @param STL number of steals the player has for the current season and team
 	 * 
-	 * @param BLK
+	 * @param BLK number of blocks the player has for the current season and team
 	 * 
-	 * @param TOV
+	 * @param TOV how many turnovers the player made for the current season and year
 	 * 
 	 */
 

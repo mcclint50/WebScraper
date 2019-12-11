@@ -1,3 +1,12 @@
+
+/**
+
+This class is the basis for the UI. This is where the interface gets created and adjusted for the text
+that we want printed in the "Box". The text that is shown is split by stats, team, and the players name.
+
+@author Nico Gomez
+*/
+//here we will import ALL of the packages needed in creating a UI.
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -24,6 +33,14 @@ public class UIPlayer extends JFrame {
 	private String textToShow; // this is what the text area will show
 	private JTextArea stats;
 	private ArrayList<Player>players;
+	/**
+	@author Nico Gomez
+	This method is the main part of the class. It sets up the entire UI and we call it WebScraper. In it 
+	is a new Border Layout object, JPanel, ContentPane, FlowLayout, JTextField, and some JButtons. This was learned 
+	in class and they are all necessary in creating a little window that looks like the output of the homework assignment. 
+	3 buttons are created: Fetch, Save to txt, and Save to JSON, which all pretty much do what the name of their buttons are.
+	*/
+
 	public void setupUI() {
 		textToShow = "                    Name           	Team	W	L	MP	PTS	FG	RB	AST	STL	BLK	TOV";
 		setTitle("Web Scraper");
@@ -55,6 +72,15 @@ public class UIPlayer extends JFrame {
 			
 			}
 		});
+
+		/**
+		This method is used for creating a button object that allows the User to save the text in the UIPlayer as a JSON file
+		@author Nico Gomez
+		@param ActionEvent e. This creates/constructs an action event object with keys, which will used in created a button 
+		that allows us to save as a JSON file
+		@return void. Returns nothing
+		*/
+
 		btnAddSaveToJson.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -71,7 +97,15 @@ public class UIPlayer extends JFrame {
 				}
 			}
 		});
-		btnAddSaveToText.addActionListener(new ActionListener() {
+
+		/**
+		This method has a try catch block and nested if else statements that are used when trying to save the
+		text to a JSON or txt file. If there is an error we throw the ex Exception. This method implements the ActionListener object for creating a file chooser.
+		@param ActionEvent e is used for creating the new file to be saved as JSON or txt.
+		@return none, this is a void method.
+		*/
+
+			btnAddSaveToText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					JFileChooser jfc = new JFileChooser(new File(getName()));
@@ -87,6 +121,11 @@ public class UIPlayer extends JFrame {
 				}
 			}
 		});
+
+		//here we will call the setupMenu() method as well as add all of the necessary buttons for the assignment.
+		//we also create a new JTextArea object for where the stats of each player will reside. This will also lead to 
+		//us being able to click on the buttons we made above that allow for the saving of the text to a JSON and txt file.
+		
 		setupMenu();
 
 		panNorth.add(label);
@@ -102,6 +141,16 @@ public class UIPlayer extends JFrame {
 		
 
 	}
+
+	/**
+	This method is just to setup the main menu and the bar above it, which 
+	we can click on Help, About, or Exit. We Use JMenu for most of the object creations, with
+	the exception of the JOptionPane.  In this method is also an ActionListener that is put in the "help" 
+	menu object that has all of the author's names, grades, and majors
+	@author Nico Gomez
+	@param n/a
+	@return n/a
+	*/
 
 	public void setupMenu() {
 		JMenuBar mbar = new JMenuBar();
@@ -131,8 +180,13 @@ public class UIPlayer extends JFrame {
 	public UIPlayer() {
 		setupUI();
 	}
-
-	public static void main(String[] args) {
+	/**
+	@author Nico Gomez
+	@param n/a
+	@return void. Returns nothing.
+	This method just creates the main class that allows for the creation of the UIPlayer ( it needs to be called somwhere!)
+	*/
+		public static void main(String[] args) {
 		UIPlayer demo = new UIPlayer();
 		demo.setVisible(true);
 	}
