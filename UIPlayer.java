@@ -18,13 +18,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class UIPlayer extends JFrame {
 	
 	private String textToShow; // this is what the text area will show
 	private JTextArea stats;
 	private ArrayList<Player>players;
 	public void setupUI() {
-		textToShow = "";
+		textToShow = "                    Name           	Team	W	L	MP	PTS	FG	RB	AST	STL	BLK	TOV";
 		setTitle("Web Scraper");
 		setBounds(100, 100, 500, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
