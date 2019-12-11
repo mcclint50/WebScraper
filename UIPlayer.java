@@ -1,9 +1,6 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -22,8 +19,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class UIPlayer extends JFrame {
+	
 	private String textToShow; // this is what the text area will show
-	private String stats;
+	private JTextArea stats;
 	public void setupUI() {
 		textToShow = "";
 		setTitle("Web Scraper");
@@ -35,11 +33,8 @@ public class UIPlayer extends JFrame {
 		panNorth.setLayout(new FlowLayout());
 		JPanel panSouth = new JPanel();
 		panSouth.setLayout(new FlowLayout());
-		JPanel panCenter = new JPanel();
-		panCenter.setLayout(new FlowLayout());
 		JLabel label = new JLabel("Enter URL:");
 		JTextField txtTextToAdd = new JTextField(30);
-		JTextField stats= new JTextField();
 		JButton btnAddFetch = new JButton("Fetch");
 		JButton btnAddSaveToText = new JButton("Save to Text");
 		JButton btnAddSaveToJson = new JButton("Save to Json");
@@ -101,10 +96,12 @@ public class UIPlayer extends JFrame {
 		panNorth.add(btnAddFetch);
 		panSouth.add(btnAddSaveToText);
 		panSouth.add(btnAddSaveToJson);
-		panCenter.add(stats);
+		stats= new JTextArea();
+		stats.setEditable(false);
+		c.add(stats, BorderLayout.CENTER);
 		c.add(panNorth, BorderLayout.NORTH);
 		c.add(panSouth, BorderLayout.SOUTH);
-		c.add(panCenter, BorderLayout.CENTER);
+		
 
 	}
 
