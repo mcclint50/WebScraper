@@ -22,6 +22,7 @@ public class UIPlayer extends JFrame {
 	
 	private String textToShow; // this is what the text area will show
 	private JTextArea stats;
+	private ArrayList<Player>players;
 	public void setupUI() {
 		textToShow = "";
 		setTitle("Web Scraper");
@@ -34,7 +35,7 @@ public class UIPlayer extends JFrame {
 		JPanel panSouth = new JPanel();
 		panSouth.setLayout(new FlowLayout());
 		JLabel label = new JLabel("Enter URL:");
-		JTextField txtTextToAdd = new JTextField(30);
+		JTextField txtTextToAdd = new JTextField(33);
 		JButton btnAddFetch = new JButton("Fetch");
 		JButton btnAddSaveToText = new JButton("Save to Text");
 		JButton btnAddSaveToJson = new JButton("Save to Json");
@@ -45,7 +46,7 @@ public class UIPlayer extends JFrame {
 		btnAddFetch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			String URL= txtTextToAdd.getText();
-			ArrayList<Player>players= ScreenScraper.PlayerScraper(URL);
+			players= ScreenScraper.PlayerScraper(URL);
 			for(Player player: players) {
 				 textToShow= textToShow+"\n"+player.toString();
 				 stats.setText(textToShow);
@@ -55,12 +56,10 @@ public class UIPlayer extends JFrame {
 		});
 		btnAddSaveToJson.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String fname = new String();
-				ArrayList<Player> players = new ArrayList<>();
 				try {
-					JFileChooser jfc = new JFileChooser();
+					JFileChooser jfc = new JFileChooser(new File(getName()));
 					if (jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-						if (PlayerWriter.writePlayersToJSON(fname, players)) {
+						if (PlayerWriter.writePlayersToJSON(jfc.getSelectedFile(), players)) {
 							JOptionPane.showMessageDialog(null, "Players saved!");
 						} else {
 							JOptionPane.showMessageDialog(null, "Players could not be saved.");
@@ -73,12 +72,10 @@ public class UIPlayer extends JFrame {
 		});
 		btnAddSaveToText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String fname = new String();
-				ArrayList<Player> players = new ArrayList<>();
 				try {
-					JFileChooser jfc = new JFileChooser();
+					JFileChooser jfc = new JFileChooser(new File(getName()));
 					if (jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-						if (PlayerWriter.writePlayersToTextFile(fname, players)) {
+						if (PlayerWriter.writePlayersToTextFile(jfc.getSelectedFile(), players)) {
 							JOptionPane.showMessageDialog(null, "Players saved!");
 						} else {
 							JOptionPane.showMessageDialog(null, "Players could not be saved.");
@@ -119,7 +116,7 @@ public class UIPlayer extends JFrame {
 		miAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null,
-						"Nicolas Gomez: Junior(Computer Engineering)\nColin McClintic: Junior(Computer Engineering) \nRobert Oliver: Junior(Computer Science)");
+						"Nicolas Gomez: Junior(Computer Engineering)\nColin McClintic: Junior(Computer Engineering) \nRobert Oliver: Senior(Computer Science)");
 
 			}
 		});
